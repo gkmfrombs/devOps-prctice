@@ -27,21 +27,21 @@ function startQuiz(){
         return;
     }
 
-    document.querySelector(".controls").classList.add("hidden");
+    document.getElementById("startScreen").classList.add("hidden");
     document.getElementById("quizBox").classList.remove("hidden");
 
     loadQuestion();
 }
 
 function shuffle(arr){
-    return arr.sort(()=>Math.random()-0.5);
+    return arr.sort(() => Math.random() - 0.5);
 }
 
 function generateOptions(correct){
     let wrong = [];
 
     while(wrong.length < 3){
-        let rand = allQuestions[Math.floor(Math.random()*allQuestions.length)].answer;
+        let rand = allQuestions[Math.floor(Math.random() * allQuestions.length)].answer;
         if(rand !== correct && !wrong.includes(rand)){
             wrong.push(rand);
         }
@@ -54,21 +54,24 @@ function loadQuestion(){
     clearInterval(timer);
     timeLeft = 30;
 
-    timer = setInterval(()=>{
+    // Update the Question Counter UI
+    document.getElementById("questionCount").innerText = `Q: ${current + 1} / ${questions.length}`;
+
+    timer = setInterval(() => {
         timeLeft--;
-        document.getElementById("timer").innerText = "⏱️ " + timeLeft;
+        document.getElementById("timer").innerText = "⏱️ " + timeLeft + "s";
         if(timeLeft <= 0){
             nextQuestion();
         }
-    },1000);
+    }, 1000);
 
     let q = questions[current];
     document.getElementById("question").innerText = q.question;
 
     let options = generateOptions(q.answer);
 
-    let html="";
-    options.forEach(opt=>{
+    let html = "";
+    options.forEach(opt => {
         html += `<button class="option-btn" onclick="checkAnswer(this, '${opt}')">${opt}</button>`;
     });
 
@@ -92,7 +95,7 @@ function showAnswer(selected, isReview){
     let correct = questions[current].answer;
     let buttons = document.querySelectorAll(".option-btn");
 
-    buttons.forEach(btn=>{
+    buttons.forEach(btn => {
         btn.classList.add("disabled");
 
         if(btn.innerText === correct){

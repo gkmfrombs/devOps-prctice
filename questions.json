@@ -1,143 +1,882 @@
 [
-  {"question":"What command lists files sorted by modification time?","answer":"ls -lt"},
-  {"question":"How do you count the number of lines in a file?","answer":"wc -l"},
-  {"question":"How do you display the first 10 lines of a file?","answer":"head -n 10"},
-  {"question":"How do you display the last 10 lines of a file?","answer":"tail -n 10"},
-  {"question":"How do you follow a log file in real-time?","answer":"tail -f"},
-  {"question":"Command to create an empty file?","answer":"touch"},
-  {"question":"How do you create nested directories (a/b/c)?","answer":"mkdir -p a/b/c"},
-  {"question":"How do you remove a directory that contains files?","answer":"rm -r"},
-  {"question":"How do you rename a file?","answer":"mv old new"},
-  {"question":"How do you copy a directory recursively?","answer":"cp -r"},
-  {"question":"How do you find files larger than 100MB?","answer":"find / -size +100M"},
-  {"question":"How do you find files modified in last 24 hours?","answer":"find / -mtime -1"},
-  {"question":"Search string inside all files?","answer":"grep -r"},
-  {"question":"Search string ignoring case?","answer":"grep -i"},
-  {"question":"Show line numbers in grep?","answer":"grep -n"},
-  {"question":"Display current username?","answer":"whoami"},
-  {"question":"Check logged in users?","answer":"w"},
-  {"question":"Download file via terminal?","answer":"wget"},
-  {"question":"Extract tar.gz?","answer":"tar -xzvf"},
-  {"question":"Compress tar.gz?","answer":"tar -czvf"},
-  {"question":"Unzip file?","answer":"unzip"},
-  {"question":"Check disk usage?","answer":"du -sh"},
-  {"question":"View history?","answer":"history"},
-  {"question":"Run last command?","answer":"!!"},
-  {"question":"Search history?","answer":"Ctrl + r"},
-
-  {"question":"What does pipe | do?","answer":"Passes output to another command"},
-  {"question":"Redirect output overwrite?","answer":">"},
-  {"question":"Append output?","answer":">>"},
-  {"question":"Compare two files?","answer":"diff"},
-  {"question":"Create symbolic link?","answer":"ln -s"},
-  {"question":"Manual page?","answer":"man"},
-  {"question":"Kernel version?","answer":"uname -r"},
-  {"question":"OS release info?","answer":"cat /etc/os-release"},
-  {"question":"Clear terminal?","answer":"clear"},
-  {"question":"Secure copy between servers?","answer":"scp"},
-  {"question":"Sync directories?","answer":"rsync -avz"},
-  {"question":"Exit status?","answer":"echo $?"},
-  {"question":"Define variable bash?","answer":"VAR=value"},
-  {"question":"Print variable?","answer":"echo $VAR"},
-  {"question":"Create alias?","answer":"alias name='command'"},
-
-  {"question":"Add new user?","answer":"useradd"},
-  {"question":"Set password?","answer":"passwd"},
-  {"question":"Delete user with home?","answer":"userdel -r"},
-  {"question":"Add group?","answer":"groupadd"},
-  {"question":"Add user to group?","answer":"usermod -aG"},
-  {"question":"Password file?","answer":"/etc/shadow"},
-  {"question":"Group file?","answer":"/etc/group"},
-  {"question":"Switch to root?","answer":"sudo su -"},
-  {"question":"chmod 777?","answer":"Full permissions"},
-  {"question":"chmod 755?","answer":"Owner RWX, others RX"},
-  {"question":"Make executable?","answer":"chmod +x"},
-  {"question":"Change owner?","answer":"chown"},
-  {"question":"Change group?","answer":"chgrp"},
-  {"question":"Sticky bit?","answer":"Prevents deletion of others files"},
-  {"question":"SUID?","answer":"Execute with owner privileges"},
-  {"question":"SGID?","answer":"Inherit group ownership"},
-  {"question":"View default permissions?","answer":"umask"},
-  {"question":"Check locked user?","answer":"passwd -S"},
-  {"question":"Unlock user?","answer":"passwd -u"},
-  {"question":"Disable root SSH?","answer":"PermitRootLogin no"},
-  {"question":"Disable password SSH?","answer":"PasswordAuthentication no"},
-  {"question":"Force password change?","answer":"chage -d 0"},
-  {"question":"Show groups of user?","answer":"groups"},
-  {"question":"Default user files?","answer":"/etc/skel"},
-  {"question":"Lock account?","answer":"usermod -L"},
-  {"question":"visudo?","answer":"Edit sudoers safely"},
-
-  {"question":"View processes?","answer":"ps aux"},
-  {"question":"Process tree?","answer":"pstree"},
-  {"question":"Kill process by ID?","answer":"kill"},
-  {"question":"Kill process by name?","answer":"pkill"},
-  {"question":"kill -9?","answer":"Force kill"},
-  {"question":"kill -15?","answer":"Graceful terminate"},
-  {"question":"Find PID?","answer":"pidof"},
-  {"question":"Change priority?","answer":"renice"},
-  {"question":"Nice range?","answer":"-20 to 19"},
-  {"question":"Memory usage?","answer":"free -h"},
-  {"question":"Disk space?","answer":"df -h"},
-  {"question":"CPU info?","answer":"lscpu"},
-  {"question":"Block devices?","answer":"lsblk"},
-  {"question":"top?","answer":"Real-time monitor"},
-  {"question":"htop?","answer":"Enhanced top"},
-  {"question":"Disk IO stats?","answer":"iostat"},
-  {"question":"VM stats?","answer":"vmstat"},
-  {"question":"System uptime?","answer":"uptime"},
-
-  {"question":"IP address?","answer":"ip addr"},
-  {"question":"Default gateway?","answer":"ip route"},
-  {"question":"Ping?","answer":"ping"},
-  {"question":"Traceroute?","answer":"traceroute"},
-  {"question":"DNS lookup?","answer":"nslookup"},
-  {"question":"DNS config?","answer":"/etc/resolv.conf"},
-  {"question":"Hosts file?","answer":"/etc/hosts"},
-  {"question":"Listening ports?","answer":"netstat -tuln"},
-  {"question":"Localhost IP?","answer":"127.0.0.1"},
-
-  {"question":"SSH?","answer":"Secure Shell"},
-  {"question":"SSH port?","answer":"22"},
-  {"question":"HTTP port?","answer":"80"},
-  {"question":"HTTPS port?","answer":"443"},
-  {"question":"DNS port?","answer":"53"},
-  {"question":"Copy SSH key?","answer":"ssh-copy-id"},
-  {"question":"Packet capture?","answer":"tcpdump"},
-  {"question":"Analyze packets?","answer":"Wireshark"},
-  {"question":"Firewall?","answer":"Network traffic filter"},
-
-  {"question":"DevOps?","answer":"Dev + Ops culture"},
-  {"question":"CI/CD?","answer":"Continuous Integration and Delivery"},
-  {"question":"Git?","answer":"Version control"},
-  {"question":"git status?","answer":"git status"},
-  {"question":"Revert commit?","answer":"git revert"},
-  {"question":"Docker?","answer":"Container platform"},
-  {"question":"Container?","answer":"Isolated runtime"},
-  {"question":"docker ps?","answer":"List running containers"},
-  {"question":"docker ps -a?","answer":"All containers"},
-  {"question":"docker logs?","answer":"Container logs"},
-  {"question":"docker exec?","answer":"Run inside container"},
-
-  {"question":"Kubernetes?","answer":"Container orchestration"},
-  {"question":"Pod?","answer":"Smallest K8s unit"},
-  {"question":"kubectl?","answer":"K8s CLI"},
-  {"question":"IaC?","answer":"Infrastructure as Code"},
-  {"question":"Ansible?","answer":"Automation tool"},
-  {"question":"Terraform?","answer":"Provision infra"},
-  {"question":"Jenkins?","answer":"CI/CD tool"},
-  {"question":"Prometheus?","answer":"Monitoring"},
-  {"question":"Grafana?","answer":"Dashboard"},
-  {"question":"Load balancer?","answer":"Distributes traffic"},
-
-  {"question":"Which signal cannot be ignored?","answer":"SIGKILL"},
-  {"question":"Device files dir?","answer":"/dev"},
-  {"question":"Background symbol?","answer":"&"},
-  {"question":"Full path command?","answer":"which"},
-  {"question":"Default shell?","answer":"bash"},
-  {"question":"Permission 755?","answer":"rwxr-xr-x"},
-  {"question":"Hostname file?","answer":"/etc/hostname"},
-  {"question":"Hard link?","answer":"ln"},
-  {"question":"Init PID?","answer":"1"},
-  {"question":"Memory command?","answer":"free"}
+  {
+    "question": "What command lists files sorted by modification time?",
+    "answer": "ls -lt (newest first) or ls -ltr (oldest first)"
+  },
+  {
+    "question": "How do you count the number of lines in a file?",
+    "answer": "wc -l filename"
+  },
+  {
+    "question": "How do you display the first 10 lines of a file?",
+    "answer": "head -n 10 filename"
+  },
+  {
+    "question": "How do you display the last 10 lines of a file?",
+    "answer": "tail -n 10 filename"
+  },
+  {
+    "question": "How do you follow a log file in real-time?",
+    "answer": "tail -f filename"
+  },
+  {
+    "question": "Command to create an empty file?",
+    "answer": "touch filename"
+  },
+  {
+    "question": "How do you create nested directories (e.g., a/b/c) at once?",
+    "answer": "mkdir -p a/b/c"
+  },
+  {
+    "question": "How do you remove a directory that contains files?",
+    "answer": "rm -r directory_name"
+  },
+  {
+    "question": "How do you rename a file?",
+    "answer": "mv old_name new_name"
+  },
+  {
+    "question": "How do you copy a directory recursively?",
+    "answer": "cp -r source_dir dest_dir"
+  },
+  {
+    "question": "How do you find files larger than 100MB?",
+    "answer": "find / -size +100M"
+  },
+  {
+    "question": "How do you find files modified in the last 24 hours?",
+    "answer": "find / -mtime -1"
+  },
+  {
+    "question": "How do you search for a string inside all files in a directory?",
+    "answer": "grep -r \"string\" /path/to/dir"
+  },
+  {
+    "question": "How do you search for a string but ignore case?",
+    "answer": "grep -i \"string\" filename"
+  },
+  {
+    "question": "How do you show line numbers in grep output?",
+    "answer": "grep -n \"string\" filename"
+  },
+  {
+    "question": "What command displays your current username?",
+    "answer": "whoami"
+  },
+  {
+    "question": "How do you check which users are logged in?",
+    "answer": "w or who"
+  },
+  {
+    "question": "How do you download a file from the internet via terminal?",
+    "answer": "wget <url> or curl -O <url>"
+  },
+  {
+    "question": "How do you extract a .tar.gz file?",
+    "answer": "tar -xzvf file.tar.gz"
+  },
+  {
+    "question": "How do you compress files into a .tar.gz archive?",
+    "answer": "tar -czvf archive.tar.gz /path/to/directory"
+  },
+  {
+    "question": "How do you unzip a zip file?",
+    "answer": "unzip file.zip"
+  },
+  {
+    "question": "How do you check the disk usage of the current directory?",
+    "answer": "du -sh"
+  },
+  {
+    "question": "How do you view the history of commands used?",
+    "answer": "history"
+  },
+  {
+    "question": "How do you run the last command again?",
+    "answer": "!!"
+  },
+  {
+    "question": "How do you search for a command in your history?",
+    "answer": "Ctrl + r and start typing"
+  },
+  {
+    "question": "What does the pipe operator do?",
+    "answer": "Passes output of one command as input to another"
+  },
+  {
+    "question": "How do you redirect output to a file (overwrite)?",
+    "answer": "command > file.txt"
+  },
+  {
+    "question": "How do you redirect output to a file (append)?",
+    "answer": "command >> file.txt"
+  },
+  {
+    "question": "How do you compare two files?",
+    "answer": "diff file1 file2"
+  },
+  {
+    "question": "How do you create a symbolic link?",
+    "answer": "ln -s /path/to/original /path/to/link"
+  },
+  {
+    "question": "What command shows the manual page for a tool?",
+    "answer": "man <command>"
+  },
+  {
+    "question": "How do you check the kernel version?",
+    "answer": "uname -r"
+  },
+  {
+    "question": "How do you check OS release information?",
+    "answer": "cat /etc/os-release"
+  },
+  {
+    "question": "How do you clear the terminal screen?",
+    "answer": "clear or Ctrl + l"
+  },
+  {
+    "question": "How do you copy files securely between servers?",
+    "answer": "scp source_file user@remote_host:/destination"
+  },
+  {
+    "question": "How do you sync directories between servers?",
+    "answer": "rsync -avz source dest"
+  },
+  {
+    "question": "What does echo $? return?",
+    "answer": "Exit status of the last command (0=success)"
+  },
+  {
+    "question": "How do you define a variable in Bash?",
+    "answer": "VAR_NAME=\"value\""
+  },
+  {
+    "question": "How do you print a variable?",
+    "answer": "echo $VAR_NAME"
+  },
+  {
+    "question": "How do you create an alias for a command?",
+    "answer": "alias name='command'"
+  },
+  {
+    "question": "Add a new user",
+    "answer": "useradd username"
+  },
+  {
+    "question": "Set a password for a user",
+    "answer": "passwd username"
+  },
+  {
+    "question": "Delete a user and their home directory",
+    "answer": "userdel -r username"
+  },
+  {
+    "question": "Add a new group",
+    "answer": "groupadd groupname"
+  },
+  {
+    "question": "Add a user to a secondary group",
+    "answer": "usermod -aG groupname username"
+  },
+  {
+    "question": "Where are password hashes stored?",
+    "answer": "/etc/shadow"
+  },
+  {
+    "question": "Where are group definitions stored?",
+    "answer": "/etc/group"
+  },
+  {
+    "question": "Switch to root user",
+    "answer": "sudo su"
+  },
+  {
+    "question": "What does chmod 777 mean?",
+    "answer": "Full permissions (RWX for all)"
+  },
+  {
+    "question": "What does chmod 755 mean?",
+    "answer": "Owner=RWX, Group/Others=RX"
+  },
+  {
+    "question": "What does chmod +x do?",
+    "answer": "Makes a file executable"
+  },
+  {
+    "question": "Change the owner of a file",
+    "answer": "chown user filename"
+  },
+  {
+    "question": "Change the group of a file",
+    "answer": "chgrp group filename"
+  },
+  {
+    "question": "What is the Sticky Bit?",
+    "answer": "Prevents users from deleting others' files in shared dirs (/tmp)"
+  },
+  {
+    "question": "What is SUID?",
+    "answer": "Executes file with owner's privileges"
+  },
+  {
+    "question": "What is SGID?",
+    "answer": "Files in dir inherit group ownership"
+  },
+  {
+    "question": "View default file permissions",
+    "answer": "umask"
+  },
+  {
+    "question": "Check if a user is locked",
+    "answer": "passwd -S username"
+  },
+  {
+    "question": "Unlock a user",
+    "answer": "passwd -u username"
+  },
+  {
+    "question": "Restrict root login via SSH",
+    "answer": "PermitRootLogin no in /etc/ssh/sshd_config"
+  },
+  {
+    "question": "Disable password authentication for SSH",
+    "answer": "PasswordAuthentication no in /etc/ssh/sshd_config"
+  },
+  {
+    "question": "Force a user to change password on next login",
+    "answer": "chage -d 0 username"
+  },
+  {
+    "question": "Show groups a user belongs to",
+    "answer": "groups username or id username"
+  },
+  {
+    "question": "What is /etc/skel?",
+    "answer": "Default files copied to new user homes"
+  },
+  {
+    "question": "Lock user account",
+    "answer": "usermod -L username"
+  },
+  {
+    "question": "What is visudo?",
+    "answer": "Safely edits sudoers file with syntax checking"
+  },
+  {
+    "question": "Grant a user sudo access",
+    "answer": "Add to sudo or wheel group or edit /etc/sudoers"
+  },
+  {
+    "question": "What is ACL?",
+    "answer": "Fine-grained permissions model"
+  },
+  {
+    "question": "View ACLs",
+    "answer": "getfacl filename"
+  },
+  {
+    "question": "Set ACLs",
+    "answer": "setfacl -m u:user:rwx filename"
+  },
+  {
+    "question": "How do you check the last login time of users?",
+    "answer": "last"
+  },
+  {
+    "question": "How do you check bad login attempts?",
+    "answer": "lastb (reads /var/log/btmp)"
+  },
+  {
+    "question": "How do you kick a logged-in user?",
+    "answer": "pkill -KILL -u username"
+  },
+  {
+    "question": "How do you change your shell?",
+    "answer": "chsh -s /bin/bash"
+  },
+  {
+    "question": "What is the UID of the root user?",
+    "answer": "0"
+  },
+  {
+    "question": "How do you view all running processes?",
+    "answer": "ps aux or ps -ef"
+  },
+  {
+    "question": "How do you view processes in a tree structure?",
+    "answer": "pstree"
+  },
+  {
+    "question": "How do you kill a process by ID?",
+    "answer": "kill <PID>"
+  },
+  {
+    "question": "How do you kill a process by name?",
+    "answer": "pkill name or killall name"
+  },
+  {
+    "question": "What does kill -9 do?",
+    "answer": "Sends SIGKILL (force kill, cannot be trapped)"
+  },
+  {
+    "question": "What does kill -15 do?",
+    "answer": "Sends SIGTERM (polite request to terminate)"
+  },
+  {
+    "question": "How do you find the PID of a specific service?",
+    "answer": "pidof service_name or pgrep service_name"
+  },
+  {
+    "question": "How do you change the priority of a running process?",
+    "answer": "renice +n <PID>"
+  },
+  {
+    "question": "What is the Nice value range?",
+    "answer": "From -20 (highest priority) to +19 (lowest priority)"
+  },
+  {
+    "question": "How do you check memory usage?",
+    "answer": "free -h"
+  },
+  {
+    "question": "How do you check disk space usage?",
+    "answer": "df -h"
+  },
+  {
+    "question": "How do you check detailed CPU information?",
+    "answer": "lscpu or cat /proc/cpuinfo"
+  },
+  {
+    "question": "How do you check block devices (disks)?",
+    "answer": "lsblk"
+  },
+  {
+    "question": "What is top?",
+    "answer": "An interactive real-time process and resource monitor"
+  },
+  {
+    "question": "What is htop?",
+    "answer": "An enhanced, user-friendly version of top with colors and interaction"
+  },
+  {
+    "question": "How do you monitor disk I/O stats?",
+    "answer": "iostat"
+  },
+  {
+    "question": "How do you monitor virtual memory stats?",
+    "answer": "vmstat"
+  },
+  {
+    "question": "How do you check system uptime?",
+    "answer": "uptime"
+  },
+  {
+    "question": "What is a background job?",
+    "answer": "A process running non-interactively, detached from the terminal foreground"
+  },
+  {
+    "question": "How do you list background jobs?",
+    "answer": "jobs"
+  },
+  {
+    "question": "How do you suspend a running foreground process?",
+    "answer": "Ctrl + Z"
+  },
+  {
+    "question": "How do you send a suspended job to the background?",
+    "answer": "bg"
+  },
+  {
+    "question": "How do you bring a background job to the foreground?",
+    "answer": "fg"
+  },
+  {
+    "question": "What is nohup used for?",
+    "answer": "To run a command immune to hangups so it keeps running after logout"
+  },
+  {
+    "question": "How do you schedule a command to run once in the future?",
+    "answer": "Use at"
+  },
+  {
+    "question": "How do you schedule recurring tasks?",
+    "answer": "crontab -e"
+  },
+  {
+    "question": "Explain the cron syntax * * * * *",
+    "answer": "Minute, Hour, Day of Month, Month, Day of Week (in that order)"
+  },
+  {
+    "question": "Where are cron logs usually found?",
+    "answer": "/var/log/cron or /var/log/syslog (on some distros)"
+  },
+  {
+    "question": "What is systemd?",
+    "answer": "A modern init system and service manager (often PID 1)"
+  },
+  {
+    "question": "How do you start a service?",
+    "answer": "systemctl start service_name"
+  },
+  {
+    "question": "How do you enable a service to start on boot?",
+    "answer": "systemctl enable service_name"
+  },
+  {
+    "question": "How do you check service logs?",
+    "answer": "journalctl -u service_name"
+  },
+  {
+    "question": "What does dmesg show?",
+    "answer": "Kernel ring buffer messages (boot and hardware logs)"
+  },
+  {
+    "question": "How do you check for open files by a user?",
+    "answer": "lsof -u username"
+  },
+  {
+    "question": "How do you see which process is using a specific port?",
+    "answer": "lsof -i :port or netstat -nlp | grep port"
+  },
+  {
+    "question": "How do you check IP addresses?",
+    "answer": "ip addr or ifconfig"
+  },
+  {
+    "question": "How do you check the default gateway?",
+    "answer": "ip route or route -n"
+  },
+  {
+    "question": "How do you check connectivity to a host?",
+    "answer": "ping host"
+  },
+  {
+    "question": "How do you check the path packets take to a host?",
+    "answer": "traceroute host or mtr host"
+  },
+  {
+    "question": "How do you check DNS resolution?",
+    "answer": "nslookup domain or dig domain"
+  },
+  {
+    "question": "Which file configures DNS servers?",
+    "answer": "/etc/resolv.conf"
+  },
+  {
+    "question": "Which file maps IPs to hostnames locally?",
+    "answer": "/etc/hosts"
+  },
+  {
+    "question": "How do you check listening ports?",
+    "answer": "netstat -tuln or ss -tuln"
+  },
+  {
+    "question": "What is localhost IP?",
+    "answer": "127.0.0.1"
+  },
+  {
+    "question": "What is the loopback interface?",
+    "answer": "The virtual interface lo for local host communication"
+  },
+  {
+    "question": "How do you download a file and save it with a specific name?",
+    "answer": "wget -O filename url or curl -o filename url"
+  },
+  {
+    "question": "How do you check if a specific port is open on a remote server?",
+    "answer": "telnet ip port or nc -zv ip port"
+  },
+  {
+    "question": "What is SSH?",
+    "answer": "Secure Shell, a protocol for encrypted remote login and commands"
+  },
+  {
+    "question": "Default port for SSH?",
+    "answer": "22"
+  },
+  {
+    "question": "Default port for HTTP?",
+    "answer": "80"
+  },
+  {
+    "question": "Default port for HTTPS?",
+    "answer": "443"
+  },
+  {
+    "question": "Default port for DNS?",
+    "answer": "53"
+  },
+  {
+    "question": "How do you copy your SSH public key to a remote server?",
+    "answer": "ssh-copy-id user@host"
+  },
+  {
+    "question": "What is scp?",
+    "answer": "Secure Copy Protocol for transferring files over SSH"
+  },
+  {
+    "question": "How do you capture network packets?",
+    "answer": "tcpdump"
+  },
+  {
+    "question": "How do you analyze packet captures?",
+    "answer": "Wireshark (GUI) or tshark (CLI)"
+  },
+  {
+    "question": "What is a Firewall?",
+    "answer": "A system that filters and controls network traffic based on rules"
+  },
+  {
+    "question": "Command to list iptables rules?",
+    "answer": "iptables -L"
+  },
+  {
+    "question": "What is UFW?",
+    "answer": "Uncomplicated Firewall, a simple firewall frontend on Ubuntu"
+  },
+  {
+    "question": "How do you allow SSH in UFW?",
+    "answer": "ufw allow ssh or ufw allow 22"
+  },
+  {
+    "question": "Difference between TCP and UDP?",
+    "answer": "TCP is connection-oriented and reliable; UDP is connectionless and faster but unreliable"
+  },
+  {
+    "question": "What is DHCP?",
+    "answer": "Dynamic Host Configuration Protocol that assigns IPs automatically"
+  },
+  {
+    "question": "How do you renew a DHCP IP lease?",
+    "answer": "dhclient -r then dhclient"
+  },
+  {
+    "question": "What is a MAC address?",
+    "answer": "Hardware identifier burned into a network interface"
+  },
+  {
+    "question": "How do you change the hostname?",
+    "answer": "hostnamectl set-hostname name"
+  },
+  {
+    "question": "What is nmap used for?",
+    "answer": "Network scanning and security auditing"
+  },
+  {
+    "question": "What is a reverse proxy?",
+    "answer": "A server that forwards client requests to backend servers"
+  },
+  {
+    "question": "What is Load Balancing?",
+    "answer": "Distributing traffic across multiple servers to improve reliability and scale"
+  },
+  {
+    "question": "What is a subnet mask?",
+    "answer": "Value that separates network and host portions of an IP address"
+  },
+  {
+    "question": "What is CIDR notation?",
+    "answer": "Classless Inter-Domain Routing, e.g., /24 for 255.255.255.0"
+  },
+  {
+    "question": "What is DevOps?",
+    "answer": "A culture and set of practices that unify dev and ops to automate and accelerate delivery"
+  },
+  {
+    "question": "What is CI/CD?",
+    "answer": "Continuous Integration plus Continuous Delivery/Deployment of code changes"
+  },
+  {
+    "question": "What is Git?",
+    "answer": "A distributed version control system"
+  },
+  {
+    "question": "How do you check git status?",
+    "answer": "git status"
+  },
+  {
+    "question": "How do you revert a git commit?",
+    "answer": "git revert <commit_id>"
+  },
+  {
+    "question": "What is Docker?",
+    "answer": "A platform for building and running containerized applications"
+  },
+  {
+    "question": "What is a Container?",
+    "answer": "A lightweight, isolated runtime package with code and dependencies"
+  },
+  {
+    "question": "Difference between VM and Container?",
+    "answer": "VMs virtualize hardware; containers share host OS kernel"
+  },
+  {
+    "question": "How do you list running containers?",
+    "answer": "docker ps"
+  },
+  {
+    "question": "How do you see all containers (including stopped)?",
+    "answer": "docker ps -a"
+  },
+  {
+    "question": "How do you view container logs?",
+    "answer": "docker logs <container_id>"
+  },
+  {
+    "question": "How do you get inside a running container?",
+    "answer": "docker exec -it <container_id> /bin/bash (or /bin/sh)"
+  },
+  {
+    "question": "What is Kubernetes (K8s)?",
+    "answer": "An orchestration system for managing containerized workloads at scale"
+  },
+  {
+    "question": "What is a Pod in K8s?",
+    "answer": "The smallest deployable unit, often wrapping one or more containers"
+  },
+  {
+    "question": "What is kubectl?",
+    "answer": "Command-line tool to interact with Kubernetes clusters"
+  },
+  {
+    "question": "What is Infrastructure as Code (IaC)?",
+    "answer": "Managing and provisioning infra via machine-readable definitions"
+  },
+  {
+    "question": "What is Ansible?",
+    "answer": "An agentless configuration management and automation tool using SSH"
+  },
+  {
+    "question": "What is Terraform?",
+    "answer": "An IaC tool to provision infra across multiple cloud providers"
+  },
+  {
+    "question": "What is Jenkins?",
+    "answer": "An automation server for building CI/CD pipelines"
+  },
+  {
+    "question": "What is Prometheus?",
+    "answer": "A metrics-based monitoring system and time-series database"
+  },
+  {
+    "question": "What is Grafana?",
+    "answer": "A visualization tool for dashboards over data sources like Prometheus"
+  },
+  {
+    "question": "What is Blue/Green Deployment?",
+    "answer": "Two environments (Blue live, Green new); traffic is switched to Green after validation"
+  },
+  {
+    "question": "What is Canary Deployment?",
+    "answer": "Releasing to a small subset of users before full rollout"
+  },
+  {
+    "question": "What is a Microservice Architecture?",
+    "answer": "Application decomposed into small, independently deployable services"
+  },
+  {
+    "question": "What is \"Serverless\"?",
+    "answer": "Running code on managed compute without managing servers (e.g., AWS Lambda)"
+  },
+  {
+    "question": "What is S3?",
+    "answer": "AWS Simple Storage Service for object storage"
+  },
+  {
+    "question": "What is EC2?",
+    "answer": "AWS Elastic Compute Cloud for virtual servers"
+  },
+  {
+    "question": "What is a Load Balancer?",
+    "answer": "A component that distributes incoming requests across multiple targets"
+  },
+  {
+    "question": "What is Auto Scaling?",
+    "answer": "Automatic adjustment of instances based on load"
+  },
+  {
+    "question": "What is a VPC?",
+    "answer": "Virtual Private Cloud, an isolated virtual network in the cloud"
+  },
+  {
+    "question": "How do you handle secrets in DevOps?",
+    "answer": "Use secret managers like Vault, AWS Secrets Manager, or K8s Secrets; avoid hardcoding"
+  },
+  {
+    "question": "What is GitOps?",
+    "answer": "Using Git as the single source of truth for infra and app definitions, with automation applying changes"
+  },
+  {
+    "question": "What is \"Shift Left\"?",
+    "answer": "Moving testing and security earlier in the development lifecycle"
+  },
+  {
+    "question": "What is Chaos Engineering?",
+    "answer": "Deliberately injecting failures to test and improve system resilience"
+  },
+  {
+    "question": "Why use a multi-stage Docker build?",
+    "answer": "To keep final images smaller and cleaner by separating build and runtime stages"
+  },
+  {
+    "question": "Scenario: Server High Load",
+    "answer": "Use top/htop to check CPU and I/O wait (wa) and identify heavy processes"
+  },
+  {
+    "question": "Scenario: \"No space left on device\" but df shows free space",
+    "answer": "Check inode usage with df -i to detect too many small files"
+  },
+  {
+    "question": "Scenario: Deleted log file but disk space not freed",
+    "answer": "A process still holds it; use lsof | grep deleted and restart that process"
+  },
+  {
+    "question": "Scenario: SSH connection is very slow",
+    "answer": "Often DNS reverse lookup; set UseDNS no in sshd_config"
+  },
+  {
+    "question": "Scenario: App works manually but fails in cron",
+    "answer": "Cron has minimal environment; use full paths and set required env vars"
+  },
+  {
+    "question": "Scenario: Permission Denied error",
+    "answer": "Check mode (ls -l), owner (chown), and SELinux (sestatus)"
+  },
+  {
+    "question": "Scenario: Can ping IP but not domain",
+    "answer": "Likely DNS issue; inspect /etc/resolv.conf"
+  },
+  {
+    "question": "Scenario: Server is out of memory (OOM)",
+    "answer": "See OOM kills with dmesg | grep -i oom, then add swap or RAM"
+  },
+  {
+    "question": "Scenario: Process stuck and can't be killed",
+    "answer": "It may be in uninterruptible sleep (D state) due to I/O issues; fix underlying device"
+  },
+  {
+    "question": "Scenario: 502 Bad Gateway",
+    "answer": "Upstream/backend is down or misconfigured; check its status and logs"
+  },
+  {
+    "question": "Scenario: 504 Gateway Timeout",
+    "answer": "Backend too slow or timeout too low; optimize or increase timeouts"
+  },
+  {
+    "question": "Scenario: 403 Forbidden",
+    "answer": "Web server permission or access rule issue; verify ownership, mode, and config"
+  },
+  {
+    "question": "Scenario: Kernel Panic on boot",
+    "answer": "Boot recovery or older kernel, then inspect initramfs and logs"
+  },
+  {
+    "question": "Scenario: Forgot root password",
+    "answer": "Boot single-user or rescue mode and run passwd for root"
+  },
+  {
+    "question": "Scenario: Filesystem is read-only",
+    "answer": "Indicates disk or fs error; run fsck on the unmounted filesystem"
+  },
+  {
+    "question": "Scenario: High I/O wait",
+    "answer": "Use iotop or similar to find processes causing heavy disk I/O"
+  },
+  {
+    "question": "Scenario: Analyzing a hacked server",
+    "answer": "Review /var/log/auth.log, last, history, running processes, and open ports"
+  },
+  {
+    "question": "Scenario: Preventing fork bomb",
+    "answer": "Use ulimit to cap processes per user"
+  },
+  {
+    "question": "Scenario: Log file is huge",
+    "answer": "Configure logrotate or truncate with > logfile instead of deleting active logs"
+  },
+  {
+    "question": "Scenario: Two services need port 80",
+    "answer": "Put a reverse proxy (like Nginx) on port 80 and route to different backends"
+  },
+  {
+    "question": "Scenario: Check script syntax without running",
+    "answer": "bash -n script.sh"
+  },
+  {
+    "question": "Scenario: Debug script line by line",
+    "answer": "bash -x script.sh"
+  },
+  {
+    "question": "Scenario: Run command if previous failed",
+    "answer": "cmd1 || cmd2"
+  },
+  {
+    "question": "Scenario: Run command only if previous succeeded",
+    "answer": "cmd1 && cmd2"
+  },
+  {
+    "question": "Scenario: Time is out of sync",
+    "answer": "Check NTP (e.g., chronyd, ntpd) and timedatectl"
+  },
+  {
+    "question": "Scenario: Copy a file preserving permissions",
+    "answer": "cp -p source dest"
+  },
+  {
+    "question": "Scenario: Find file modified in last 10 minutes",
+    "answer": "find . -mmin -10"
+  },
+  {
+    "question": "Scenario: Check libraries a command depends on",
+    "answer": "ldd /bin/command"
+  },
+  {
+    "question": "Scenario: Mount a USB drive",
+    "answer": "mount /dev/sdb1 /mnt/usb (adjust device and mountpoint)"
+  },
+  {
+    "question": "Scenario: Unmount a busy drive",
+    "answer": "fuser -km /mnt/point then umount /mnt/point"
+  },
+  {
+    "question": "Which signal cannot be ignored?",
+    "answer": "C. SIGKILL"
+  },
+  {
+    "question": "Which directory contains device files?",
+    "answer": "B. /dev"
+  },
+  {
+    "question": "Which symbol runs a command in the background?",
+    "answer": "B. &"
+  },
+  {
+    "question": "Which command shows the full path of a command?",
+    "answer": "B. which"
+  },
+  {
+    "question": "What is the default shell in most Linux distros?",
+    "answer": "C. bash"
+  },
+  {
+    "question": "Which permission is 755?",
+    "answer": "B. rwxr-xr-x"
+  },
+  {
+    "question": "What file contains hostname configuration?",
+    "answer": "B. /etc/hostname"
+  },
+  {
+    "question": "Which command creates a hard link?",
+    "answer": "B. ln"
+  },
+  {
+    "question": "What is the process ID of init/systemd?",
+    "answer": "B. 1"
+  },
+  {
+    "question": "Which command checks memory usage?",
+    "answer": "C. free"
+  }
 ]

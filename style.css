@@ -1,80 +1,195 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .app {
+    width: 100%;
     max-width: 600px;
-    margin: auto;
-    padding: 15px;
 }
 
-h1 {
-    font-size: 22px;
+.app-header h1 {
+    font-size: 28px;
+    font-weight: 800;
     text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.controls, #quizBox, #endScreen {
-    background: #1e1e2f;
-    padding: 15px;
-    border-radius: 12px;
-    margin-top: 15px;
+.card {
+    background: rgba(30, 30, 47, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-button {
+.hidden {
+    display: none !important;
+}
+
+.controls label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+select {
     width: 100%;
     padding: 12px;
-    margin: 6px 0;
-    border: none;
+    margin-bottom: 20px;
+    background: #2a2a40;
+    color: white;
+    border: 1px solid #4a4a6a;
     border-radius: 8px;
     font-size: 16px;
-    cursor: pointer;
+    outline: none;
+    font-family: 'Inter', sans-serif;
 }
 
-button:hover {
-    background: #444;
-    color: white;
+select:focus {
+    border-color: #667eea;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
     font-size: 14px;
+    font-weight: 600;
 }
 
-.hidden {
-    display: none;
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #2a2a40;
 }
 
-.correct {
-    background-color: #28a745 !important;
+.counter-badge {
+    background: rgba(102, 126, 234, 0.2);
+    color: #8fa0f3;
+    border: 1px solid #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.wrong {
-    background-color: #dc3545 !important;
-    color: white;
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
-.disabled {
-    pointer-events: none;
-    opacity: 0.7;
+.secondary-btn {
+    background: #3f3f5a;
+    color: #e2e8f0;
+}
+
+.secondary-btn:hover {
+    background: #4a4a6a;
+    transform: translateY(-2px);
 }
 
 .nav-buttons {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* 📱 Mobile */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.option-btn {
+    background: #2a2a40;
+    color: #f1f5f9;
+    border: 2px solid transparent;
+    text-align: left;
+    padding: 16px;
+}
+
+.option-btn:hover:not(.disabled) {
+    background: #32324d;
+    border-color: #667eea;
+}
+
+.correct {
+    background-color: rgba(40, 167, 69, 0.2) !important;
+    border-color: #28a745 !important;
+    color: #4dd46b !important;
+}
+
+.wrong {
+    background-color: rgba(220, 53, 69, 0.2) !important;
+    border-color: #dc3545 !important;
+    color: #ff6b7a !important;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#question {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+#result {
+    text-align: center;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.final-score-text {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 20px 0;
+    color: #667eea;
+}
+
 @media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
+    .card { padding: 15px; }
+    h1 { font-size: 24px; }
+    #question { font-size: 18px; }
+    .top-bar { font-size: 12px; }
+    .badge { padding: 5px 10px; }
 }
